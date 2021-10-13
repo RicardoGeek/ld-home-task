@@ -5,16 +5,20 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "4.17.1",
-    "sequelize": "^6.3.4",
-    "sqlite3": "^4.0.1"
+    "moment": "^2.29.1",
+    "sequelize": "^6.7.0",
+    "sqlite3": "^5.0.2"
   },
   "scripts": {
     "start": "nodemon ./src/server.js",
-    "seed": "node ./scripts/seedDb.js"
+    "seed": "node ./scripts/seedDb.js",
+    "test": "rm database.sqlite3 && npm run seed && jest --verbose"
   },
   "devDependencies": {
-    "concurrently": "4.1.0",
-    "nodemon": "1.19.1"
+    "concurrently": "6.3.0",
+    "jest": "^27.2.5",
+    "nodemon": "2.0.13",
+    "supertest": "^6.1.6"
   },
   "engines": {
     "node": ">=10.16.3"
